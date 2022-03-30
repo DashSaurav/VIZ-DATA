@@ -9,7 +9,7 @@ from pages import utils
 
 # custom imports
 from multipage import MultiPage
-from pages import data_upload, bar, line, scatter, area
+from pages import data_upload, bar, line, scatter
 
 #creating app instance for multipage
 app = MultiPage()
@@ -31,10 +31,5 @@ app.add_page("Upload Data", data_upload.app)
 app.add_page("Bar Graph", bar.app)
 app.add_page("Line Graph", line.app)
 app.add_page("Scatter Plot", scatter.app)
-app.add_page("Area-Graph", area.app)
-
 
 app.run()
-
-
-
