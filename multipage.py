@@ -1,6 +1,7 @@
 """
 This file is the framework for generating multiple Streamlit applications 
 through an object oriented framework. 
+taken from some crazy developer - found it in google.
 """
 
 # Import necessary libraries 
@@ -31,7 +32,7 @@ class MultiPage:
         )
 
     def run(self):
-        # Drodown to select the page to run  
+        # used radio for app navigation. 
         page = st.sidebar.radio(
             'App Navigation', 
             self.pages, 
