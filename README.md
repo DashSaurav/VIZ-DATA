@@ -5,3 +5,6 @@ And then look into the visuals and graphs through this awesome frontend develope
 - It turns Data Scripts into shareable web apps.
 - To run streamlit use this in your terminal  ->  <b>pip install streamlit</b>
 - Check out documentations -> <b>https://docs.streamlit.io/ </b>
+</br>
+https://share.streamlit.io/dashsaurav/viz-data/main/app.py
+</br>Use this Link to See a Live Demo.
