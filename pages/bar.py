@@ -14,15 +14,15 @@ def app():
         # df_analysis = pd.read_csv('data/2015.csv')
         df_analysis = pd.read_csv('data/main_data.csv')
         # df_visual = pd.DataFrame(df_analysis)
-        df_visual = df_analysis.copy()
-        cols = pd.read_csv('data/metadata/column_type_desc.csv')
-        Categorical,Numerical,Object = utils.getColumnTypes(cols)
-        cat_groups = {}
-        unique_Category_val={}
-
         st.subheader('Showing Bar Graph')
-        bar_value = st.sidebar.selectbox('Select an attribute for X-Axis in Bar Graph',df_analysis.columns)
-        bar_value1 = st.sidebar.selectbox('Select an attribute for Y-Axis in Bar Graph',df_analysis.columns)
+        col = st.columns(2)
+        opt = list(df_analysis.columns)
+        with col[0]:
+            bar_value = st..sidebar.selectbox('Select an attribute for X-Axis in Bar Graph',opt)
+        opt = list(df_analysis.columns)
+        opt.remove(bar_value)
+        with col[1]:
+            bar_value1 = st.sidebar.selectbox('Select an attribute for Y-Axis in Bar Graph',opt)
         # Alt bar chart
         chart = (
             alt.Chart(df_analysis)
