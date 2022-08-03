@@ -20,7 +20,7 @@ def app():
         opt = list(df_analysis.columns)
         line_value = st.sidebar.selectbox('Select an Attribute for X-axis in Line Graph',opt)
         opt = list(df_analysis.columns)
-        opt.remove(bar_value)
+        opt.remove(line_value)
         line_value1 = st.sidebar.selectbox('Select an Attribute for Y-axis in Line Graph',opt)
         # Add some matplotlib code !
         chart = alt.Chart(df_analysis).mark_line().encode(
