@@ -18,7 +18,7 @@ def app():
         col = st.columns(2)
         opt = list(df_analysis.columns)
         with col[0]:
-            bar_value = st..sidebar.selectbox('Select an attribute for X-Axis in Bar Graph',opt)
+            bar_value = st.sidebar.selectbox('Select an attribute for X-Axis in Bar Graph',opt)
         opt = list(df_analysis.columns)
         opt.remove(bar_value)
         with col[1]:
