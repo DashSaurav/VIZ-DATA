@@ -13,17 +13,16 @@ def app():
     else:
         # df_analysis = pd.read_csv('data/2015.csv')
         df_analysis = pd.read_csv('data/main_data.csv')
-        # df_visual = pd.DataFrame(df_analysis)
-        df_visual = df_analysis.copy()
-        cols = pd.read_csv('data/metadata/column_type_desc.csv')
-        Categorical,Numerical,Object = utils.getColumnTypes(cols)
-        cat_groups = {}
-        unique_Category_val={}
+        
 
         #scatter plot code comes here
+        
         st.subheader('Showing Scatter Plot')
-        stack_bar = st.sidebar.selectbox('Select an attribute for X-Axis in Stacked Bar Graph',df_analysis.columns)
-        stack_bar1 = st.sidebar.selectbox('Select an attribute for Y-Axis in Stacked Bar Graph',df_analysis.columns)
+        opt = list(df_analysis.columns)
+        stack_bar = st.sidebar.selectbox('Select an attribute for X-Axis in Stacked Bar Graph',opt)
+        opt = list(df_analysis.columns)
+        opt.remove(stack_bar)
+        stack_bar1 = st.sidebar.selectbox('Select an attribute for Y-Axis in Stacked Bar Graph',opt)
         #Stacked chart code goes here!!
         scatter = alt.Chart(df_analysis).mark_point(filled=True).encode(
             alt.X(stack_bar),
